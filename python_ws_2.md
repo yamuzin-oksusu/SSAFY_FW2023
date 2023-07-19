@@ -50,3 +50,5 @@ print(('a' and 'b') in vowels)
 print(('b' and 'a') in vowels) # >> True (a가 vowels 안에 있는-지 판단)
 ```
 
+
+

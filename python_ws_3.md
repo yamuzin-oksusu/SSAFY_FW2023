@@ -296,3 +296,4 @@ if __name__ = '__main__':
 
 ## Tips
 * Python에서는 함수를 변수에 저장 가능
+
