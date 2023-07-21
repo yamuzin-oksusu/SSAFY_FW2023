@@ -140,3 +140,5 @@ for idx , name in enumerate(fruits):
 # >> 2번째 과일은 b이다.
 # >> 3번째 과일은 c이다.
 ```
+### for-else 문
+**for 문이 중간에 break등으로 끊기지 않고 끝까지 수행되었을때 else 문을 실행함**
