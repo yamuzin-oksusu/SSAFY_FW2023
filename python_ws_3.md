@@ -88,7 +88,7 @@ calculate_sum(1,2,3)
 정해지지 않은 개수의 인자를 처리하는 인자<br>
 함수 정의 시 매개변수 앞에 '*'를 붙여 사용, 여러 개의 인자를 tuple 로 처리
 
-### Arbitraty Keyword Arhument Lists
+### Arbitraty Keyword Argument Lists
 ```
 def print_info(**kwargs):
   print(kwargs)
