@@ -1,4 +1,5 @@
-# Data Structure
+# Data Structure (1)
+
 2023.07.24(Mon)
 -----
 
