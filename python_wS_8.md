@@ -328,3 +328,35 @@ except IndexError as error :
 
 # >> list index out of range가 발생했습니다.
 ```
+### raise
+- 강제로 exception 발생
+```
+def f():
+    print('f() 실행')
+    raise Exception('예외 발생')
+    print('f() 끝')
+
+def g():
+    print('g() 시작')
+    f()
+    print('g() 끝')
+
+def h():
+    print('h() 시작')
+    try :
+        g()
+    except:
+        print('잡았다 요놈')
+    print('h() 끝')
+
+h()
+print('종료')
+
+
+# >> h() 시작
+# >> g() 시작
+# >> f() 실행
+# >> 잡았다 요놈
+# >> h() 끝
+# >> 종료
+```
