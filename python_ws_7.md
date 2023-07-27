@@ -1,4 +1,4 @@
-# Classes (1)
+# Classes
 
 2023.07.26(Wed)
 -----
@@ -33,7 +33,7 @@
 - 붕어빵은 인스턴스다 (X)
 - 붕어빵은 붕어빵틀의 인스턴스다 (O)
 
-- 클래스를 만든다 == <span style="background-color:#FFE6E6">타입</span>을 만든다
+- 클래스를 만든다 == **타입**을 만든다
   ```
   name = 'Alice'
   print(type(name)) #<class 'str'>
@@ -65,13 +65,13 @@
 ```
 # 클래스 정의
 class Person:
-  blood_color = 'red'
+    blood_color = 'red'
 
-  def __init__(self,name):
-    self.name = name
-  
-  def singing(self):
-    return f'{self.name}가 노래합니다.'
+    def __init__(self,name):
+        self.name = name
+    
+    def singing(self):
+        return f'{self.name}가 노래합니다.'
 
 #인스턴스 생성
 singer1 = Person('iu')
@@ -122,10 +122,10 @@ print(singer1.blood_color) # >> red
   ```
   # Person 정의
   class Person :
-    name = 'unknown'
+      name = 'unknown'
 
-    def talk(self) :
-      print(self.name)
+      def talk(self) :
+          print(self.name)
   
   p1 = Person()
   p1.talk() # >> unknown
@@ -159,11 +159,11 @@ print(singer1.blood_color) # >> red
   - 인스턴스가 생성 될 때마다 클래스 변수가 늘어나도록 설정할 수 있음
 ```
 class Person:
-  count = 0
+    count = 0
 
-  def __init__(self,name):
-    self.name = name
-    Person.count += 1
+    def __init__(self,name):
+        self.name = name
+        Person.count += 1
 
 singer1 = Person('iu')
 singer2 = Person('MJ')
@@ -174,9 +174,9 @@ print(Person.count) # >> 2
   - 클래스 변수를 변경할때는 항상 클래스.클래스변수 형식으로 변경
 ```
 class Circle():
-  pi = 3.14
-  def __init__(self.r):
-    self.r = r
+    pi = 3.14
+    def __init__(self.r):
+        self.r = r
 
 c1 = Circle(5)
 c2 = Circle(10)
@@ -207,8 +207,8 @@ print(c2.pi) # >> 5
   - **반드시 첫번째 매개변수로 인스턴스 자신(self)를 전달받음**
   ```
   class MyClass :
-    def instance_method(self, arg1, ...):
-      pass
+      def instance_method(self, arg1, ...):
+          pass
   ```
 - self 동작 원리
   - upper메서드를 사용해 문자열 'hello'를 대문자로 변경하기
@@ -233,8 +233,8 @@ print(c2.pi) # >> 5
   ```
   class Person:
 
-    def __init(self):
-      print('인스턴스가 생성되었습니다.')
+      def __init(self):
+          print('인스턴스가 생성되었습니다.')
 
   person1 = Person('MJ') # 인스턴스가 생성되었습니다.
   ```
@@ -247,22 +247,22 @@ print(c2.pi) # >> 5
   ```
   Class MyClass:
 
-    @classmethod
-    def class_method(cls,arg1, ...):
-      pass
+      @classmethod
+      def class_method(cls,arg1, ...):
+          pass
   ```
 - e.g.
   ```
   class Person:
-    count = 0
+      count = 0
 
-    def __init__(self,name):
-      self.name = name
-      Person.count += 1
+      def __init__(self,name):
+          self.name = name
+          Person.count += 1
 
-    @classmethod
-    def class_method(cls):
-      print(f'인구수는 {cls.count}입니다.')
+      @classmethod
+      def class_method(cls):
+          print(f'인구수는 {cls.count}입니다.')
 
   singer1 = Person('iu')
   singer1 = Person('MJ')
@@ -279,20 +279,20 @@ print(c2.pi) # >> 5
   ```
   class MyClass:
 
-    @staticmethod
-    def static_method(arg1, ...):
-      pass
+      @staticmethod
+      def static_method(arg1, ...):
+          pass
   ```
 - static method 예시
   ```
   class StringUtils:
-    @staticmethod
-    def reverse_string(string):
-      return string[::-1]
+      @staticmethod
+      def reverse_string(string):
+          return string[::-1]
 
-    @staticmethod
-    def capitalize_string(string):
-      return string.capitalize()
+      @staticmethod
+      def capitalize_string(string):
+          return string.capitalize()
 
   text = 'hello, world'
 
@@ -314,20 +314,20 @@ print(c2.pi) # >> 5
 ```
 class MyClass:
 
-  def instance_method(self):
-    return 'instance method' , self
-  
-  @classmethod
-  def class_method(cls):
-    return 'class method' , cls
-  
-  @staticmethod
-  def static_method():
-    return 'static method'
+    def instance_method(self):
+        return 'instance method' , self
+    
+    @classmethod
+    def class_method(cls):
+        return 'class method' , cls
+    
+    @staticmethod
+    def static_method():
+        return 'static method'
 ```
 - 클래스가 할 수 있는 것
   -  클래스는 모든 메서드를 호출할 수 있음
-  - <span style="background-color:#FFE6E6">하지만 클래스는 class method와 static method만 사용하도록 한다</span>
+  - **하지만 클래스는 class method와 static method만 사용하도록 한다**
   ```
   instance = MyClass()
 
@@ -341,7 +341,7 @@ class MyClass:
   ```
 - instance가 할 수 있는 것
   - 인스턴스는 모든 메서드를 호출할 수 있음
-  - <span style="background-color:#FFE6E6">하지만 instance는 instance method만 사용하도록 한다</span>
+  - **하지만 instance는 instance method만 사용하도록 한다**
   ```
   instance = MyClass()
 
@@ -358,14 +358,14 @@ class MyClass:
   - 특정 상황에 자동으로 호출되는 메서드
   ```
   class Circle:
-    def __init__(self, r):
-      self.r = r
-    
-    def area(self):
-      return 3.14 * self.r * self.r
+      def __init__(self, r):
+          self.r = r
+      
+      def area(self):
+          return 3.14 * self.r * self.r
 
-    def __str__(self):
-      return f'[원] radius : {self.r}'
+      def __str__(self):
+          return f'[원] radius : {self.r}'
   
   c1 = Circle(10)
   c2 = Circle(1)
