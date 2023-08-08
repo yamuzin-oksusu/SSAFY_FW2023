@@ -202,6 +202,7 @@ arr = [list(map(int,input().split())) for _ in range(N)]
 - 구현
     - 검색 범위의 시작점과 종료점을 이용하여 검색을 반복 수행
     - 이진 검색의 경우, 자료에 삽입이나 삭제가 발생했을때 배열의 상태를 항상 정렬 상태로 유지하는 추가 작업이 필요함
+- 시간 복잡도 : O(log n)
 ```
 def binarySearch(a, N, key)
     start = 0
