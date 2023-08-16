@@ -1,5 +1,5 @@
 # Stack 1
-2023.08.09(Wed) 
+2023.08.09(Wed) ~ 2023.08.10(Thu)
 -----
 ## 스택
 ### 스택의 특성
@@ -171,7 +171,7 @@ end DFS()
 [출처](https://velog.io/@bbirong/3-1.-DFSBFS-%EA%B0%9C%EB%85%90-%EC%8B%A4%EC%A0%84-%EB%AC%B8%EC%A0%9C)
 ```
 # DFS 메서드 정의
-def dfs(graph, V, visited):
+def dfs(graph, v, visited):
 	# 현재 노드를 방문 처리
     visited[v] = True
     print(v, end=' ')
@@ -222,7 +222,8 @@ def dfs_iteration(graph, root):
     return visited
 ```
 - stack에 다 넣어놓고 하나씩 pop해서 비교하는 꼼수 st
-### Python 구현(수업 중)
+
+### Python 구현 (인접 행렬 이용)
 ```
 '''
 V E
@@ -247,11 +248,12 @@ def dfs(n, V, adj_m):
                 print(n) # do(w)
                 visited[n] = 1 # w 방문 표시
                 break # for w, n 에 인접인 w c 찾은 경우 
-            else :
-                if stack : # 스택에 지나온 정점이 남아있으면
-                    n = stack.pop() # pop해서 다시 다른 w 찾을 n 준비
-                else : 
-                    break
+        else :
+            if stack : # 스택에 지나온 정점이 남아있으면
+                n = stack.pop() # pop해서 다시 다른 w 찾을 n 준비
+            else : 
+                break
+    return dfs
 
 
 V, E = map(int, input().split()) # 1번 부터 v번 정점, E개의 간선
