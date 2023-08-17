@@ -1,5 +1,5 @@
 # Stack 2
-2023.08.14(Mon)
+2023.08.14(Mon) ~ 2023.08.16(Wed)
 ----
 ## 계산기 1
 문자열로 된 계산식이 주어질 때, 스택을 이용하여 이 계산식의 값을 계산할 수 있다.
@@ -115,6 +115,29 @@ def checknode(v) : # node
 
 ## 부분집합, 순열
 
+### 순열 생성하기
+```
+def perm(i,N):
+    if i == N :
+        print(A)
+        '''
+        [0, 1, 2]
+        [0, 2, 1]
+        [1, 0, 2]
+        [1, 2, 0]
+        [2, 1, 0]
+        [2, 0, 1]
+        '''
+    else :
+        for j in range(i,N):
+            A[i] , A[j] = A[j],A[i]
+            perm(i+1,N)
+            A[i] , A[j] = A[j],A[i]
+
+N = 3
+A = [p for p in range(N)]
+perm(0,N,0)
+```
 ### 재귀적 접근
 ```
 def f(i,N) :
@@ -289,9 +312,9 @@ f(0,N,0)
             return
         else :
             bit[i] = 1 # 부분집합에 A[i] 포함
-            f(i+1,N, s+A[i])
+            f(i+1,N, s+A[i],t)
             bit[i] = 0 # 부분집합에 A[i] 미포함
-            f(i+1, N, s)
+            f(i+1, N, s,t)
             return
 
     N = 10
