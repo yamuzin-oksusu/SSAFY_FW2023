@@ -1,5 +1,5 @@
 # Queue
-2023.08.17(Thu)
+2023.08.17(Thu) ~ 2023.08.18(Fri)
 -----
 ## 큐
 - 특성
@@ -158,5 +158,42 @@ enQ(4) # [4, 1, 2, 3]
     - 순서대로 입력, 출력, 전달 되어야 하므로 FIFO 방식의 자료구조인 큐가 활용됨
 
 ## BFS
+너비 우선 탐색 (Breadth First Serach, BFS)
+- 탐색 시작점의 인접 정점들을 먼저 모두 차례로 방문한 후에, 방문했던 정점을 시작점으로 하여 다시 인접한 정점들을 차례로 방문하는 방식
+- 인접한 정점들에 대해 탐색을 한 후, 차례로 다시 너비우선탐색을 진행해야 하므로, 선입선출 형태의 자료구조인 큐를 활용함
 
-## BFS 예제
+### BFS 알고리즘 구현
+```
+def BFS(G, v) : # 그래프 G, 탐색 시작점 v
+    visited [0]* (n+1) # n : 정점의 개수
+    queue = [] # 큐 생성
+    queue.append(v) # 시작점 v를 큐에 삽입
+    while queue : 
+        t = queue.pop(0) # 큐의 첫번째 원소 반환
+        if not visited[t] : # 만약 t가 방문되지 않은 곳이라면
+            visited[t] = True #방문한 것으로 표시
+            visit(t)
+            for i in G[t] : # t와 연결된 모든 정점에 대해
+                if not visited[i] : # 방문되지 않은 곳이라면
+                    queue.append(i) # 큐에 넣기
+```
+
+### BFS 알고리즘(변형)
+queue에 넣자 마자 visit 될 경우
+```
+def BFS(G, v) : # 그래프 G, 탐색 시작점 v
+    visited [0]* (n+1) # n : 정점의 개수
+    queue = [] # 큐 생성
+    queue.append(v) # 시작점 v를 큐에 삽입
+    visited[v] = 1
+    while queue : 
+        t = queue.pop(0) # 큐의 첫번째 원소 반환
+        visit(t)
+        for i in G[t] : 
+            if not visited[i] :
+                queue.append(i)
+                visited[i] = visited[t]+1
+```
+
+
+
