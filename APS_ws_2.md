@@ -106,7 +106,7 @@ arr = [list(map(int,input().split())) for _ in range(N)]
         total = 0 # 부분집합의 합
         for i in range(n):
             if bit[i]:
-                print(arr[i], end= ' '_)
+                print(arr[i], end= ' ')
                 total += arr[i]
         print(bit)
     arr = [1, 2, 3, 4]
