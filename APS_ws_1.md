@@ -57,10 +57,9 @@ nums = list(map(int,input().split()))
 
 for i in range(N):
     max_nums = 0
-    if num(i) > max :
+    if num(i) > max_nums :
         max_nums = num(i)
 nums.index(max_nums) 
-
 ```
 
 ## 버블 정렬 (Bubble Sort)
