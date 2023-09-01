@@ -107,7 +107,7 @@ arr = [list(map(int,input().split())) for _ in range(N)]
         for i in range(n):
             if bit[i]:
                 print(arr[i], end= ' '_)
-                toal += arr[i]
+                total += arr[i]
         print(bit)
     arr = [1, 2, 3, 4]
     bit = [0, 0, 0, 0]
@@ -117,9 +117,9 @@ arr = [list(map(int,input().split())) for _ in range(N)]
             bit[1] = j
             for k in range(2):
                 bit[2] = k
-                for l in range(@) :
+                for l in range(2) :
                     bit[3] = 1
-                    print_subset(bit)
+                    print_subset(bit, arr, 4)
     ```
 
 - 비트 연산자 
