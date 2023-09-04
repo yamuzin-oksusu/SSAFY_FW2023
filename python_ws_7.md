@@ -28,7 +28,7 @@
 ### 클래스와 객체
 - 클래스로 만든 객체를 인스턴스라고 함
 
-![클래스와 객체](/SSAFY_FW2023/images/image.png)
+![클래스와 객체](\https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image.png)
 - 붕어빵은 객체다(O) 
 - 붕어빵은 인스턴스다 (X)
 - 붕어빵은 붕어빵틀의 인스턴스다 (O)

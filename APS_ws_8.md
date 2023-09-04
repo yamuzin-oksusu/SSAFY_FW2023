@@ -27,7 +27,7 @@
   - 단순히 **실행시간이 n<sup>2</sup>에 비례**하는 알고리즘 이라고 말함
 - 단순화된 함수 $n^2$ 에 임의의 상수 c를 곱한 $cn^2$이 n 증가함에 따라 $f(n)$의 상한이 된다( 단, c>0) 
 
-![Big Omega](image-3.png)
+![Big Omega](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-3.png)
 
 - n이 증가함에 따라 $O(g(n))$이 점근적 상한이라는 것 (즉, $g(n)$이 n<sub>0</sub>보다 큰 모든 n에 대해서 항상 f(n)보다 크다는 것)을 보여준다.
 
@@ -36,7 +36,7 @@
 - $f(n) = 2n^2 -7n +4$의  $\Omega$ 표기는 $\Omega(n^2)$이다.
 - $f(n) = \Omega(n^2)$은 'n 이 증가함에 따라 $2n^2 -7n +4$이 $cn^2$보다 작을 수 없다'라는 의미이다. 이때 상수 c= 1로 놓으면 된다. 
 
-![Alt text](image-4.png)
+![Alt text](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-4.png)
 - 복잡도 f(n)과 $\Omega$표기를 그래프로 나타낸 것
 - n이 증가함에 따라 $\Omega(g(n))$이 점근적 하한이라는 것(즉, $g(n)$이 n<sub>0</sub>보다 큰 모든 n에 대해서 항상 f(n)보다 작다는 것)을 보여준다.
 
