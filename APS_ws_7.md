@@ -60,13 +60,13 @@
     - 자식 노드를 좌우 순서로 방문한 후, 부모노드로 방문한다.
 
 
-![순회 연습문제](image-1.png)
+![순회 연습문제](/SSAFY_FW2023/images/image-1.png)
 - 전위 순회 : A B D H I E J C F K G L M
 - 중위 순회 : H D I B J E A F K C L G M
 - 후위 순회 : H I D J E B K F C L M G A
 ## 이진 트리의 표현
 - 이진 트리에 각 노드번호를 다음과 같이 부여
-    ![Alt text](image-2.png)
+    ![Alt text](/SSAFY_FW2023/images/image-2.png)
   - 루트의 번호를 1로 함
   - 레벨 n에 있는 노드에 대하여 왼쪽부터 오른쪽으로 2<sup>n</sup>부터 2<sup>n+1</sup> -1 까지 번호를 차례로 부여
   - 노드 번호를 배열의 인덱스로 사용

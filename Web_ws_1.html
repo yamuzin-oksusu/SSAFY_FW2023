@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            color: aquamarine; background-color: black;
+        }
+        /* 모든 h2 요소의 txt 색을 주황색으로 변경 */
+        h2 {
+            color : orange;
+        }
+        h3, h4 {
+            color: beige;
+        }
+        .green {
+            color: greenyellow;
+        }
+        #purple {
+            color: purple;
+        }
+        /* 자식결합자 */
+        .green > strong {
+            font-size: 35px;
+        }
+        /* 자손 결합자 */
+        .green li {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>main heading</h1>
+    <h2>sub heading</h2>
+    <h3>점점 더 깊어지는</h3>
+    <h4 class = 'green'>headings</h4>
+    <p>This is my page</p>
+    <p>This is <em>emphasis</em></p>
+    <p class = 'green'>hi my name is <strong id="purple">MinjooKim</strong></p>
+    <ol class = 'green'>
+        <li>파이썬</li>
+        <li>알고리즘</li>
+        <li>웹</li>
+        <ul>
+            <li>자손 결합자</li>
+            <li>연습</li>
+            <li>입니다.</li>
+        </ul>
+    </ol>
+    <ul>
+        <li>이것은</li>
+        <li>unordered list</li>
+        <li>입니다.</li>
+    </ul>
+    <p>Tag의 들여쓰기는 HTML 문법에 영향을 주지 않지만 편의를 위해 사용함</p>
+    <p class = 'green'>HTML은 구조를 눈으로 찾으면서 Debugging 필요함. 항상 <strong>개발자 도구를 이용해서 확인</strong></p>
+
+</body>
+</html>
