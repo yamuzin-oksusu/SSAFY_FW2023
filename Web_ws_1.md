@@ -79,11 +79,11 @@ HyperText Markup Language : 웹 페이지의 의미와 **구조**를 정의하�
 </html>
 ```
 - HTML Element(요소)
-![HTML Element](/SSAFY_FW2023/images/image-5.png)
+![HTML Element](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-5.png)
   - 하나의 요소는 여는 태그와 닫는 태그 그리고 그 안의 내용으로 구성됨
   - 닫는 태그는 태그 이름 앞에 슬래시가 포함되며 닫는 테그가 없는 태그도 존재
 - HTML Attributes(속성)
-![HTML Attributes](/SSAFY_FW2023/images/image-6.png)
+![HTML Attributes](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-6.png)
   - 규칙
     - 속성은 요소 이름과 속성 사이에 공백이 있어야 함
     - 하나 이상의 속성들이 있는 경우엔 속성 사이에 공백으로 구분함
@@ -128,7 +128,7 @@ HTML의 주요 목적 중 하나는 텍스트 구조와 의미를 제공하는 �
 - CSS (Cascading Style Sheet)
   - 웹 페이지의 디자인과 레이아웃을 구성하는 언어
 - CSS 구문
-![CSS 구문](/SSAFY_FW2023/images/image-7.png)
+![CSS 구문](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-7.png)
   - CSS 적용 방법
     1. Inline 스타일
        - THML 요소 안에 style 속성 값으로 작성
