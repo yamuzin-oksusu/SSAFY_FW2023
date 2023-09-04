@@ -79,11 +79,13 @@ HyperText Markup Language : 웹 페이지의 의미와 **구조**를 정의하�
 </html>
 ```
 - HTML Element(요소)
-![HTML Element](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-5.png)
+
+    ![HTML Element](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-5.png)
   - 하나의 요소는 여는 태그와 닫는 태그 그리고 그 안의 내용으로 구성됨
   - 닫는 태그는 태그 이름 앞에 슬래시가 포함되며 닫는 테그가 없는 태그도 존재
+
 - HTML Attributes(속성)
-![HTML Attributes](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-6.png)
+    ![HTML Attributes](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-6.png)
   - 규칙
     - 속성은 요소 이름과 속성 사이에 공백이 있어야 함
     - 하나 이상의 속성들이 있는 경우엔 속성 사이에 공백으로 구분함
@@ -222,6 +224,15 @@ HTML의 주요 목적 중 하나는 텍스트 구조와 의미를 제공하는 �
     - 자식 결합자 (">")
       - 첫번째 요소의 직계 자식만 선택
       - ex. ul > li 은 <ul> 안에 있는 모든 <li>를 선택 **(한단계 아래 자식들만)**
+### CSS 상속
+기본적으로 CSS는 상속을 통해 부모 요소의 속성을 자식에게 상속해 재사용성을 높임
+= 상속 여부
+    - 상속되는 속성
+      - Text 관련 요소(font, color, text=align), opacity, visibility 등
+    - 상속되지 않는 속성
+      - Box model 관련 요소(width, height, border, box-sizing ...)
+      - position 관련 요소(position, top/right/bottom/left, z-index) 등
+
 ### 우선순위
 - Specificity
   - 동일한 요소에 적용 가능한 같은 스탇일을 두 가지 이상 작성했을 때 어떤 규칙이 적용되는지 결정하는 것
