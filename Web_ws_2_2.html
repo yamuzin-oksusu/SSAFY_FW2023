@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CSS Position</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 1500px;
+    }
+
+    .container {
+      position: relative;
+      height: 300px;
+      width: 300px;
+      border: 1px solid black;
+    }
+
+    .box {
+      height: 100px;
+      width: 100px;
+      border: 1px solid black;
+    }
+
+    .static {
+      position: static;
+      background-color: lightcoral;
+    }
+
+    .absolute {
+      position: absolute;
+      background-color: lightgreen;
+      top: 100px;
+      left: 100px;
+    }
+
+    .relative {
+      position: relative;
+      background-color: lightblue;
+      top: 100px;
+      left: 100px;
+    }
+
+    .fixed {
+      position: fixed;
+      background-color: gray;
+      top: 0;
+      right: 0;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      background-color: lightblue;
+      padding: 20px;
+      border: 2px solid black;
+    }
+    .card {
+      width: 300px;
+      height: 200px;
+      border: 1px solid black;
+      position: relative;
+    }
+
+    .card-content {
+      padding: 10px;
+    }
+
+    .badge {
+      background-color: red;
+      color: white;
+      padding: 5px 10px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    .container1 {
+      position: relative;
+    }
+
+    .box1 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+    }
+
+    .red {
+      background-color: red;
+      top: 50px;
+      left: 50px;
+      z-index: 3;
+    }
+    
+
+    .green {
+      background-color: green;
+      top: 100px;
+      left: 100px;
+      z-index: 2;
+    }
+
+    .blue {
+      background-color: blue;
+      top: 150px;
+      left: 150px;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box static">Static</div>
+    <div class="box absolute">Absolute</div>
+    <div class="box relative">Relative</div>
+    <div class="box fixed">Fixed</div>
+  </div>
+  <h1>Sticky positioning</h1>
+  <div>
+    <div class="sticky">첫 번째 Sticky</div>
+    <div>
+      <p>내용1</p>
+      <p>내용2</p>
+      <p>내용3</p>
+    </div>
+    <div class="sticky">두 번째 Sticky</div>
+    <div>
+      <p>내용4</p>
+      <p>내용5</p>
+      <p>내용6</p>
+    </div>
+    <div class="sticky">세 번째 Sticky</div>
+    <div>
+      <p>내용7</p>
+      <p>내용8</p>
+      <p>내용9</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-content">
+      <h3>Card Title</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <span class="badge">New</span>
+    </div>
+
+    <div class="container1">
+        <div class="box1 red"></div>
+        <div class="box1 green"></div>
+        <div class="box1 blue"></div>
+      </div>
+
+</body>
+
+</html>

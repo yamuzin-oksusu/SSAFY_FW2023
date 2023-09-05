@@ -1,7 +1,7 @@
 # Fundamentals of HTML and CSS
 
 
-2023.09.04(Mon) ~ 
+2023.09.04(Mon)
 -----
 
 ## Web 소개

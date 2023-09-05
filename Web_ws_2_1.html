@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 100px;
+      border: 2px solid black;
+      background-color: yellow;
+    }
+
+    .content-box {
+      box-sizing: content-box;
+      padding-left: 20px;
+      padding-top: 10px;
+      padding-bottom: 30px;
+      margin-bottom: 100px;
+    }
+
+    .box2 {
+        width: 300px;
+        border: 3px dotted darkblue;
+        padding: 100px 150px;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin: 100px auto; 상하 100px + 좌우 동일한 값 */
+      /* box-sizing: border-box; */
+    }
+    
+      a,
+      span,
+      img {
+      border: 3px solid red;
+    }
+
+    h1,
+    p,
+    div {
+      border: 1px solid blue;
+    }
+
+    span {
+      margin: 20px;
+      padding: 20px;
+      width: 80px;
+      height: 50px;
+      background-color: lightblue;
+      border: 2px solid blue;
+      /* display: inline-block; */
+    }
+
+    ul>li {
+      background-color: crimson;
+      padding: 10px 20px;
+      /* display: inline-block; */
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .box {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #4CAF50;
+      margin: 10px;
+    }
+
+    .none {
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box1 content-box">content-box</div>
+  <div class="box2">border-box</div>
+
+    <h1>Normal flow</h1>
+    <p>Lorem, ipsum dolor sit amet consect explicabo</p>
+    <div>
+      <p>block 요소는 기본적으로 부모 요소의 너비 100%를 차지하며, 자식 콘텐츠의 최대 높이를 취한다.</p>
+      <p>block 요소의 총 너비와 총 높이는 content + padding + border width/height다.</p>
+    </div>
+    <p>block 요소는 서로 margins로 구분된다.</p>
+    <p>inline 요소는 <span>이 것처럼</span> 자체 콘텐츠의 너비와 높이만 차지한다.
+      그리고 inline 요소는 <a href="#">width나 height 속성을 지정 할 수 없다.</a>
+    </p>
+    <p>
+      물론 이미지도 <img src="#"> 인라인 요소다.
+      단, 이미지는 다른 inline 요소와 달리 width나 height로 크기를 조정할 수 있다.
+    </p>
+    <p>
+      만약 inline 요소의 크기를 제어하려면 block 요소로 변경하거나 inline-block 요소로 설정해주어야 한다.
+    </p>
+    <!-- 1. 이제 다른 요소를 밀어낼 수 있는 span -->
+    <p>Lorem ipsum dolor sit amet <span>consectetur</span> adipisicing elit. Animi iusto enim officia exercitationem
+        dolorque, quasi velit, dolores, tempora illum odio necessitatibus. Fugit,
+        cumque eligendi!</p>
+
+    <!-- 2. 리스트 요소를 가로로 정렬 -->
+    <ul>
+        <li><a href="#">link</a></li>
+        <li><a href="#">link</a></li>
+        <li><a href="#">link</a></li>
+    </ul>
+
+    <!-- 3. div 요소를 가로로 정렬 -->
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <div class="box"> 1번과</div>
+    <div class="box none"> 2</div>
+    <div class="box"> 3번은 나오지만 2번 box는 none처리되어 보여지지 않음 </div>
+
+  </body>
+
+</html>
