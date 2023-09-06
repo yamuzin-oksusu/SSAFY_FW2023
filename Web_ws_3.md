@@ -47,6 +47,8 @@ Bootstrap에서 제공하는 UI 관련 요소 (버튼, 네비게이션 바, 카�
 
 ## Semantic Web
 
+[실습코드](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/Web_ws_3_2.html)<br>
+
 ### 개요
 > **웹 데이터를 의미론적으로 구조화된 형태로 표현하는 방식**<br> 검색엔진 및 개발자가 웹 페이지 콘텐츠를 이해하기 쉽도록
 ### Semantic in HTML
