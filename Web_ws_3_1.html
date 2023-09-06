@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">  
+    <style>
+        .box {
+          width: 200px;
+          height: 200px;
+        }
+      </style>
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+        </ul>
+        <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        </div>
+    </div>
+    </nav>
+    <h1>Hello, world!</h1>
+ 
+    <!-- display heading -->
+    <h1 class="display-1">Display 1</h1>
+    <h1 class="display-2">Display 2</h1>
+    <h1 class="display-3">Display 3</h1>
+    <h1 class="display-4">Display 4</h1>
+    <h1 class="display-5">Display 5</h1>
+    <h1 class="display-6">Display 6</h1>
+
+    <!-- inline text element -->
+    <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+    <p><del>This line of text is meant to be treated as deleted text.</del></p>
+    <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+    <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+    <p><u>This line of text will render as underlined.</u></p>
+    <p><small>This line of text is meant to be treated as fine print.</small></p>
+    <p><strong>This line rendered as bold text.</strong></p>
+    <p><em>This line rendered as italicized text.</em></p>
+
+    <!-- list style -->
+    <ul class="list-unstyled">
+        <li>This is a list.</li>
+        <li>It appears completely unstyled.</li>
+        <li>Structurally, it's still a list.</li>
+        <li>However, this style only applies to immediate child elements.</li>
+        <li>Nested lists:
+        <ul>
+            <li>are unaffected by this style</li>
+            <li>will still show a bullet</li>
+            <li>and have appropriate left margin</li>
+        </ul>
+        </li>
+        <li>This may still come in handy in some situations.</li>
+    </ul>
+    <!-- colors -->
+    <p class="text-primary">.text-primary</p>
+    <p class="text-primary-emphasis">.text-primary-emphasis</p>
+    <p class="text-secondary">.text-secondary</p>
+    <p class="text-secondary-emphasis">.text-secondary-emphasis</p>
+    <p class="text-success">.text-success</p>
+    <p class="text-success-emphasis">.text-success-emphasis</p>
+    <p class="text-danger">.text-danger</p>
+    <p class="text-danger-emphasis">.text-danger-emphasis</p>
+    <p class="text-warning bg-dark">.text-warning</p>
+    <p class="text-warning-emphasis">.text-warning-emphasis</p>
+    <p class="text-info bg-dark">.text-info</p>
+    <p class="text-info-emphasis">.text-info-emphasis</p>
+    <p class="text-light bg-dark">.text-light</p>
+    <p class="text-light-emphasis">.text-light-emphasis</p>
+    <p class="text-dark bg-white">.text-dark</p>
+    <p class="text-dark-emphasis">.text-dark-emphasis</p>
+    
+    <p class="text-body">.text-body</p>
+    <p class="text-body-emphasis">.text-body-emphasis</p>
+    <p class="text-body-secondary">.text-body-secondary</p>
+    <p class="text-body-tertiary">.text-body-tertiary</p>
+    
+    <p class="text-black bg-white">.text-black</p>
+    <p class="text-white bg-dark">.text-white</p>
+    <p class="text-black-50 bg-white">.text-black-50</p>
+    <p class="text-white-50 bg-dark">.text-white-50</p>
+
+    <!-- backgroung color -->
+    <div class="p-3 mb-2 bg-primary text-white">.bg-primary</div>
+    <div class="p-3 mb-2 bg-primary-subtle text-emphasis-primary">.bg-primary-subtle</div>
+    <div class="p-3 mb-2 bg-secondary text-white">.bg-secondary</div>
+    <div class="p-3 mb-2 bg-secondary-subtle text-emphasis-secondary">.bg-secondary-subtle</div>
+    <div class="p-3 mb-2 bg-success text-white">.bg-success</div>
+    <div class="p-3 mb-2 bg-success-subtle text-emphasis-success">.bg-success-subtle</div>
+    <div class="p-3 mb-2 bg-danger text-white">.bg-danger</div>
+    <div class="p-3 mb-2 bg-danger-subtle text-emphasis-danger">.bg-danger-subtle</div>
+    <div class="p-3 mb-2 bg-warning text-dark">.bg-warning</div>
+    <div class="p-3 mb-2 bg-warning-subtle text-emphasis-warning">.bg-warning-subtle</div>
+    <div class="p-3 mb-2 bg-info text-dark">.bg-info</div>
+    <div class="p-3 mb-2 bg-info-subtle text-emphasis-info">.bg-info-subtle</div>
+    <div class="p-3 mb-2 bg-light text-dark">.bg-light</div>
+    <div class="p-3 mb-2 bg-light-subtle text-emphasis-light">.bg-light-subtle</div>
+    <div class="p-3 mb-2 bg-dark text-white">.bg-dark</div>
+    <div class="p-3 mb-2 bg-dark-subtle text-emphasis-dark">.bg-dark-subtle</div>
+    <p class="p-3 mb-2 bg-body-secondary">.bg-body-secondary</p>
+    <p class="p-3 mb-2 bg-body-tertiary">.bg-body-tertiary</p>
+
+    <div class="p-3 mb-2 bg-body text-body">.bg-body</div>
+    <div class="p-3 mb-2 bg-black text-white">.bg-black</div>
+    <div class="p-3 mb-2 bg-white text-dark">.bg-white</div>
+    <div class="p-3 mb-2 bg-transparent text-body">.bg-transparent</div>
+
+
+    <!-- Box 만들기 실습 -->
+    <div class="box border border-dark bg-info"></div>
+    
+    <!-- Bootstrap Component -->
+    
+    <!-- Alerts -->
+    <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+    </div>
+    <div class="alert alert-secondary" role="alert">
+        A simple secondary alert—check it out!
+    </div>
+    <div class="alert alert-success" role="alert">
+        A simple success alert—check it out!
+    </div>
+    <div class="alert alert-danger" role="alert">
+        A simple danger alert—check it out!
+    </div>
+    <div class="alert alert-warning" role="alert">
+        A simple warning alert—check it out!
+    </div>
+    <div class="alert alert-info" role="alert">
+        A simple info alert—check it out!
+    </div>
+    <div class="alert alert-light" role="alert">
+        A simple light alert—check it out!
+    </div>
+    <div class="alert alert-dark" role="alert">
+        A simple dark alert—check it out!
+    </div>
+
+    <!-- Badges -->
+    <span class="badge text-bg-primary">Primary</span>
+    <span class="badge text-bg-secondary">Secondary</span>
+    <span class="badge text-bg-success">Success</span>
+    <span class="badge text-bg-danger">Danger</span>
+    <span class="badge text-bg-warning">Warning</span>
+    <span class="badge text-bg-info">Info</span>
+    <span class="badge text-bg-light">Light</span>
+    <span class="badge text-bg-dark">Dark</span>
+
+    <!-- Button -->
+    <a class="btn btn-primary" href="#" role="button">Link</a>
+    <button class="btn btn-primary" type="submit">Button</button>
+    <input class="btn btn-primary" type="button" value="Input">
+    <input class="btn btn-primary" type="submit" value="Submit">
+    <input class="btn btn-primary" type="reset" value="Reset">
+
+    <!-- Cards -->
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+
+    </nav>
+    <!-- Carousel -->
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://www.rd.com/wp-content/uploads/2020/05/GettyImages-1153012691.jpg" class="d-block w-100" alt="rabbits">
+        </div>
+        <div class="carousel-item">
+            <img src="data:image/jpeg;base64,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" class="d-block w-100" alt="alone">
+        </div>
+        <div class="carousel-item">
+            <img src="https://live.staticflickr.com/65535/17123251389_80282733ce_z.jpg" class="d-block w-100" alt="money">
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch demo modal
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>

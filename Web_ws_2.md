@@ -148,3 +148,9 @@ CSS Layout
   - 배치 : flex-direction, flex-wrap
   - 공간 분배 : justify-content , align-content
   - 정렬 : align-items, align-self
+
+## 참고
+### shorthand 속성 
+- border
+- margin & padding
+- margin collapsing(마진 상쇄)
