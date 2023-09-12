@@ -161,4 +161,59 @@ $ python manage.py runserver
 ![Request response](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-11.png)
 
 - URLs 
-- http://127.0.0.1:8000/articles/ 로 요청이 왔을 때 view 모듈의 index 뷰 함수를 호출
+  - http://127.0.0.1:8000/articles/ 로 요청이 왔을 때 view 모듈의 index 뷰 함수를 호출
+    ```
+    # urls.py
+
+    from django.contrib import admin
+    from django.urls import path
+
+    # articles 패키지에서 views 모듈을 가져오는 것
+    from articles import views
+
+    urlpatterns = [
+        path('admin/', admin.site.urls),
+
+        # articles 앱의 views에서 함수를 호출
+        # 이때 url 경로는 반드시 slash로 끝나야 함
+        path('articles/', views.index)
+    ]
+    ```
+- View
+  - 특정 경로에 있는 template과 request 객체를 결합해 응답 객체를 반환하는 index view 함수 정의
+  - **모든 view함수는 첫번째 인자로 request(요청) 객체를 필수적으로 받음**
+
+    ```
+    #views.py
+
+    from django.shortcuts import render
+
+    # Create your views here.
+    # 응답 객체 index.html 을 반환하는 함수 작성
+    def index(request):
+        return render(request, 'articles/index.html')
+
+    ```
+- Template
+  1. articles 앱 폴더 안에 **templates 폴더** 생성
+     - 폴더 명은 반드시 template여야 하며 개발자가 직접 생성해야 함 
+  2. templates 폴더 안에 articles 폴더 생성
+  3. articles 폴더 안에 템플릿 파일 생성
+
+    ```
+    <!-- articles/index.html -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+    <body>
+    안녕하세요
+    </body>
+    </html>
+    ```
+  - Django에서 template을 인식하는 경로 규칙
+    ![template rule](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-12.png)
