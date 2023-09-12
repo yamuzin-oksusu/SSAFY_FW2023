@@ -155,7 +155,7 @@ $ python manage.py runserver
   - `tests.py`<sup>1)</sup>
     - 프로젝트 테스트 코드를 작성하는 곳
 
-1) 수업 과정에서 수정할 일 없음
+`1)` 수업 과정에서 수정할 일 없음
 
 ### 요청과 응답
 ![Request response](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-11.png)
@@ -217,3 +217,25 @@ $ python manage.py runserver
     ```
   - Django에서 template을 인식하는 경로 규칙
     ![template rule](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-12.png)
+
+
+### MTV 디자인 패턴 정리
+- Model
+  - 데이터와 관련된 로직을 관리
+  - 응용프로그램의 데이터 구조를 정의하고 데이터베이스의 기록을 관리
+- Template
+  - 레이아웃과 화면을 처리
+  - 화면상의 사용자 인터페이스 구조와 레이아웃을 정리
+- View
+  - Model & Template과 관련한 로직을 처리해서 응답을 반환
+  - 클라이언트의 요청에 대해 처리를 분기하는 역할
+- View 예시
+  - 데이터가 필요하다면 model에 접근해서 데이터를 가져오고,
+  - 가져온 데이터를 template로 보내 화면을 구성하고,
+  - 구성된 화면을 응답으로 만들어 클라이언트에게 반환
+
+![MTV 디자인 패턴](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-13.png)
+
+
+
+[Django Template Language 문서 참고](https://docs.djangoproject.com/en/4.2/ref/templates/builtins/)
