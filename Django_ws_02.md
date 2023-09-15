@@ -113,16 +113,65 @@
 - [form 활용 2] 사용자 입력 데이터를 받아 그대로 출력하는 서버 만들기
   - 두 개의 view함수가 필요함
   1. throw 로직 작성 (43p)
-```
-# urls.py
-```
-```
-# views.py
-```
-```
-<!--ar>
-```
+    ```
+    # urls.py
+
+    urlpatterns = [
+        path('throw/', views.throw),
+    ]
+    ```
+    ```
+    # views.py
+
+    def throw(request):
+        return render (request, 'articles/throw.html')
+    ```
+    ```
+    <!--articles/throw.html -->
+    
+    {% extends "articles/base.html" %}
+
+    {% block content %}
+      <h1>throw</h1>
+      <form action ="/articles/catch/", method = 'GET'>
+          <label for= 'message'>메세지: </label>
+          <input type='text' name = "message" id = 'message'>
+          <input type='submit'>
+      </form>
+    {% endblock content %}
+    ```
   2. catch 로직 작성
+    ```
+    # urls.py
+
+    urlpatterns = [
+        path('catch/', views.catch),
+    ]
+    ```
+    ```
+    # views.py
+
+    def catch(request):
+        message = request.GET.get('message')
+        context = {
+            'message' : message,
+        }
+        # 사용자로부터 요청을 받아서
+        # 요청에서 사용자 입력 데이터를 찾아
+        # context에 저장 후 catch 템플릿에 출력
+        return render(request, 'articles/catch.html',context)
+    ```
+    ```
+    <!--articles/throw.html -->
+    
+    {% extends "articles/base.html" %}
+
+    {% block content %}
+        <h1>{{message}} 받기 완료 </h1>
+    {% endblock content %}
+    ```
+
+- 
 ## Django URLs
 ### Django URLs
 ### 변수와 URL
