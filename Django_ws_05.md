@@ -92,7 +92,7 @@ def new(request):
 ```
 <!--templates/articles/new.html-->
 <h1>NEW</h1>
-<form action="<!--create로 이동하는 url-->" method="POST">
+<form action="<!--create로 이동하는 url-->" method="GET">
 {% csrf_token %}
 <div>
     <label for="title">제목 : </label>
@@ -159,7 +159,22 @@ def create(request):
 <form action="{% url "articles:create" %}" method="POST">
 ```
 ## HTTP request methods
-HTTP: 네트워크 상에서 데이터를 주고 받기 위한 약속
+- HTTP
+  - 네트워크 상에서 데이터를 주고 받기 위한 약속
+- HTTP request methods
+  - 데이터(리소스)에 어떤 요청(행동)을 원하는지를 나타내는 것
+  - GET & POST
+- 'GET' Method
+  - 특정 리소스를 조회하는 요청(GET으로 데이터를 전달하면 Query String 형식으로 보내짐)
+  - `http://127.0.0.1:8000/articles/create/?title=제목&content=내용`
+- 'POST' Method
+  - 특정 리소스에 변경(생성, 수정, 삭제)을 요구하는 요청
+  - POST로 데이터를 전달하면 HTTP Body에 담겨 보내짐
+  - POST method 적용
+```
+<!--templates/articles/new.html-->
+
+```
 
 ## Delete
 
