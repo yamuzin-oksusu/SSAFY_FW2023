@@ -16,7 +16,7 @@
   - 이런 과정과 기능을 직접 개발하는 것이 아닌 Django가 제공하는 Form을 사용
 
 ## Django Form
-> 사용자 입력 데이터를 수집하고, 처리 및 유효성 검사를 수행하기 위한 도구
+> 사용자 입력 데이터를 수집하고, 처리 및 유효성 검사를 수행하기 위한 도구<br>
 > 유효성 검사를 단순화하고 자동화 할 수 있는 기능을 제공
 - Form class 정의
     ```
@@ -201,7 +201,7 @@ ModelForm의 정보를 작성하는 곳
   - HTML form의 생성, 데이터 유효성 검사 및 처리를 쉽게 할 수 있도록 도움
 
 ### 참고
-- ModelForm 키워드 인자 data와 instance 살펴보기[here](https://github.com/django/django/blob/main/django/forms/models.py#L341)
+- ModelForm 키워드 인자 data와 instance 살펴보기 [here](https://github.com/django/django/blob/main/django/forms/models.py#L341)
 - Widget 응용
     ```
     # articles/forms.py
@@ -236,6 +236,8 @@ ModelForm의 정보를 작성하는 곳
             fields = '__all__'
     ```
     - 실행 결과
+
+
         ![Widget](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-23.png)
 
 
@@ -286,7 +288,7 @@ ModelForm의 정보를 작성하는 곳
         <form action="{% url "articles:create" %}" method="POST">
         ```
     > **request method에 따른 요청의 변화**<br>
-    > (GET) articles/create/ : 게시글 생성 문서를 줘!
+    > (GET) articles/create/ : 게시글 생성 문서를 줘!<br>
     > (POST) articles/create/ : 게시글을 생성해줘!
 
 - 새로운 update view 함수
