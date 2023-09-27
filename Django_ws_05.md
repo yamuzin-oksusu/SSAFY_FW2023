@@ -149,7 +149,6 @@ def create(request):
     # 3
     # Article.objects.create(title=title, content=content)
 
-    # return render(request, 'articles/create.html')
     return render(request, 'articles/create.html')
 ```
 
@@ -233,8 +232,37 @@ def create(request):
   - 게시글 생성 후 개발자 도구를 사용해 Form Data가 전송되는 것을 확인하면 더 이상 URL에 데이터가 표기되지 않음을 알 수 있다.
 
 ### redirect
+**게시글 작성 후 완료를 알리는 페이지를 응답하는 것**<br>
+게시글을 "조회해줘!"라는 요청이 아닌 "작성해줘!"라는 요청이기 때문에 게시글 저장 후 페이지를 응답하는 것은 POST 요청에 대한 적절한 응답이 아님<br>
+> 데이터 저장 후 페이지를 주는 것이 아닌 다른 페이지로 사용자를 보내야 한다.<br> 사용자를 보낸다 == 사용자가 GET 요청을 한번 더 보내도록 해야한다
 
+**redirect()** <br>
+클라이언트가 인자에 작성된 주소로 다시 요청을 보내도록 하는 함수
 
+- redirect() 함수 적용 
+    - create view 함수 개선
+    ```
+    # articles/view.py
+
+    from django.shortcuts import reㄴnder, redirect
+
+    def create(request):
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        article = Article(title=title, content=content)
+        article.save()
+
+        return redirect('articles:detail',article.pk)
+
+    ```
+    - redirect 특징
+        - 해당 redirect에서 클라이언트는 detail url로 요청을 다시 보내게 됨
+        - 결과적으로 detail view 함수가 호출되어 detail view 함수의 반환결과인 detail 페이지를 응답받음
+        - 결국 사용자는 게시글 작성 후 작성된 게시글의 detail 페이지로 이동하는 것으로 느끼게 되는 것
+- 게시글 작성 결과
+    - 게시글 작성 후 생성된 게시글의 detail 페이지로 redirect 되었는지 확인
+    - create 요청 이후에 detail로 다시 요청을 보냈다는 것을 알 수 있음
+[사진 넣기 게시글 작성 결과]
 ## Delete
 Delete 기능 구현
 ```
