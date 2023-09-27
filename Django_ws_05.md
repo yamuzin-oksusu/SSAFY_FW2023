@@ -262,19 +262,45 @@ def create(request):
 - 게시글 작성 결과
     - 게시글 작성 후 생성된 게시글의 detail 페이지로 redirect 되었는지 확인
     - create 요청 이후에 detail로 다시 요청을 보냈다는 것을 알 수 있음
-[사진 넣기 게시글 작성 결과]
+
+
+[게시글 작성 결과 사진 넣기]
+
+
+
 ## Delete
-Delete 기능 구현
+
+### Delete 기능 구현
+
 ```
 # articles/urls.py
+
+app_name = 'articles'
+urlpatterns = [
+    ...,
+    path('<int:pk>/delete/', views.delete, name='delete'),
+]
 ```
 
 ```
 # articles/views.py
+
+def delete(request, pk):
+    # 몇 번 게시글을 삭제할 것인지 조회
+    article = Article.objects.get(pk=pk)
+    # 조회한 게시글을 삭제
+    article.delete()
+    return redirect('articles:index')
 ```
 
 ```
 <!-- articles/detail.html -->
+
+<form action="{% url "articles:delete" article.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="삭제">
+  </form>
+  <a href="{% url "articles:index" %}">[back]</a>
 ```
 ## Update
 
@@ -283,7 +309,8 @@ Create 로직을 구현하기 위해 필요한 view 함수의 개수는? **2개*
 - update : 사용자가 입력한 데이터를 받아 DB에 저장
 
 
-### edit 기능 구현
+
+### edit 기능 구현 (52p)
 
 ### update 기능 구현
 
