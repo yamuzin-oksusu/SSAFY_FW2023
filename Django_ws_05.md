@@ -91,6 +91,7 @@ def new(request):
 
 ```
 <!--templates/articles/new.html-->
+
 <h1>NEW</h1>
 <form action="<!--create로 이동하는 url-->" method="GET">
 {% csrf_token %}
@@ -106,11 +107,11 @@ def new(request):
 </form>
 ```
 - new 페이지로 이동할 수 있는 하이퍼링크 작성
-```
-<!--templates/articles/index.html-->
+    ```
+    <!--templates/articles/index.html-->
 
-<a href="{% url "articles:new" %}">NEW</a>
-```
+    <a href="{% url "articles:new" %}">NEW</a>
+    ```
 
 ### create 기능 구현
 ```
@@ -171,11 +172,31 @@ def create(request):
   - 특정 리소스에 변경(생성, 수정, 삭제)을 요구하는 요청
   - POST로 데이터를 전달하면 HTTP Body에 담겨 보내짐
   - POST method 적용
-```
-<!--templates/articles/new.html-->
+    ```
+    <!--templates/articles/new.html-->
 
-```
+    <h1>NEW</h1>
+    <form action="<!--create로 이동하는 url-->" method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="title">제목 : </label>
+        <input type="text" id="title" name="title">
+    </div>
+    <div>
+        <label for="content">내용 : </label>
+        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+    </div>
+    <input type="submit">
+    </form>
+    ```
+    ```
+    # articles/views.py
 
+    def create(request):
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+    ```
+  - POST 적용 결과
 ## Delete
 
 ## Update
