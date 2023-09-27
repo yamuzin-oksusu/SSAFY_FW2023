@@ -196,7 +196,69 @@ def create(request):
         title = request.POST.get('title')
         content = request.POST.get('content')
     ```
-  - POST 적용 결과
-## Delete
+  - POST 적용 결과 : 403 Forbidden
+    ![403error](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-29.png)
+    - 403 Forbidden : 서버에 요청이 전달되었지만 권한 때문에 거절되었다는 것을 의미
+    - 거절 이유 : CSRF token이 누락되었다
 
+- HTTP response status code : 특정 HTTP 요청이 성공적으로 완료되었는지를 3자리 숫자로 표현하기로 약속한 것 <br>[참고자료](https://developer.mozilla.org/ko/docs/Web/HTTP/Status)
+
+- CSRF (Cross-Site-Request-Forgery)
+  - 사이트 간 요청 위조
+  - 사용자가 자신의 의지와 무관하게 공격자가 의도한 행동을 하여 특정 웹 페이지를 보안에 취약하게 하거나 수정, 삭제 등의 작업을 하게 만드는 공격 방법
+
+- CSRF Token 적용
+  - DTL의 csrf_token 태그를 사용해 사용자에게 토큰 값을 부여
+  - 요청 시 토큰 값도 함께 서버로 전송될 수 있도록 함
+      ```
+      <!-- templates/articles/new.html -->
+
+      <h1>NEW</h1>
+      <form action = "{% url "articles:create" %}" method = "POST">
+          {% csrf_token %}
+      ```
+      ![CSRF](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-29.png)
+
+  - 요청 시 CSRF Token을 함께 보내야 하는 이유
+    - Django 서버는 해당 요청이 DB에 데이터를 하나 생성하는(DB에 영향을 주는)요청에 대해 **Django가 직접 제공한 페이지에서 데이터를 작성하고 있는 것 인지**에 대한 확인 수단이 필요한 것
+    - 겉모습이 똑같은 위조 사이트나 정상적이지 않은 요청에 대한 방어 수단
+      - 기존 : 요청 데이터 -> 게시글 작성
+      - 변경 : 요청 데이터 + 인증 토큰 -> 게시글 작성
+  - 왜 POST일 때만 Token을 확인할까?
+    - POST는 단순 조회를 위한 GET과 달리 특정 리소스에 변경(생성, 수정, 삭제)을 요구하는 의미와 기술적인 부분을 가지고 있기 때문
+    - DB에 조작을 가하는 요청은 반드시 인증 수단이 필요
+    - **DB에 대한 변경사항을 만드는 요청이기 때문에 토큰을 사용해 최소한의 신원 확인을 하는 것**
+
+- 게시글 작성 결과
+  - 게시글 생성 후 개발자 도구를 사용해 Form Data가 전송되는 것을 확인하면 더 이상 URL에 데이터가 표기되지 않음을 알 수 있다.
+
+### redirect
+
+
+## Delete
+Delete 기능 구현
+```
+# articles/urls.py
+```
+
+```
+# articles/views.py
+```
+
+```
+<!-- articles/detail.html -->
+```
 ## Update
+
+Create 로직을 구현하기 위해 필요한 view 함수의 개수는? **2개**
+- edit : 사용자 입력 데이터를 받을 페이지를 렌더링
+- update : 사용자가 입력한 데이터를 받아 DB에 저장
+
+
+### edit 기능 구현
+
+### update 기능 구현
+
+## 참고
+
+### HTTP request methods를 활용한 효율적인 URL 구성
