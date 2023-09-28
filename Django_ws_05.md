@@ -346,7 +346,7 @@ def edit(request, pk):
     <hr>
     <a href="{% url 'articles:index' %}">[back]</a>
     ```
-    ![edit](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-31.png)
+    ![edit](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-32.png)
 
 - edit 페이지로 이동하기 위한 하이퍼링크 작성
     ```
