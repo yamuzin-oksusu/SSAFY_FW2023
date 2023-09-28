@@ -216,7 +216,7 @@ def create(request):
       <form action = "{% url "articles:create" %}" method = "POST">
           {% csrf_token %}
       ```
-      ![CSRF](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-29.png)
+      ![CSRF](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-30.png)
 
   - 요청 시 CSRF Token을 함께 보내야 하는 이유
     - Django 서버는 해당 요청이 DB에 데이터를 하나 생성하는(DB에 영향을 주는)요청에 대해 **Django가 직접 제공한 페이지에서 데이터를 작성하고 있는 것 인지**에 대한 확인 수단이 필요한 것
@@ -252,20 +252,17 @@ def create(request):
         article = Article(title=title, content=content)
         article.save()
 
-        return redirect('articles:detail',article.pk)
-
+        return redirect('articles:index')
+        # return redirect('articles:detail',article.pk) # detail 페이지로 redirect
     ```
     - redirect 특징
-        - 해당 redirect에서 클라이언트는 detail url로 요청을 다시 보내게 됨
-        - 결과적으로 detail view 함수가 호출되어 detail view 함수의 반환결과인 detail 페이지를 응답받음
-        - 결국 사용자는 게시글 작성 후 작성된 게시글의 detail 페이지로 이동하는 것으로 느끼게 되는 것
+        - 해당 redirect에서 클라이언트는 index(detail) url로 요청을 다시 보내게 됨
+        - 결과적으로 index(detail) view 함수가 호출되어 index(detail) view 함수의 반환결과인 index(detail) 페이지를 응답받음
+        - 결국 사용자는 게시글 작성 후 작성된 게시글의 index(detail) 페이지로 이동하는 것으로 느끼게 되는 것
 - 게시글 작성 결과
-    - 게시글 작성 후 생성된 게시글의 detail 페이지로 redirect 되었는지 확인
-    - create 요청 이후에 detail로 다시 요청을 보냈다는 것을 알 수 있음
-
-
-[게시글 작성 결과 사진 넣기]
-
+    - 게시글 작성 후 생성된 게시글의 index 페이지로 redirect 되었는지 확인
+    - create 요청 이후에 index로 다시 요청을 보냈다는 것을 알 수 있음
+    ![redirect](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-31.png)
 
 
 ## Delete
@@ -309,11 +306,82 @@ Create 로직을 구현하기 위해 필요한 view 함수의 개수는? **2개*
 - update : 사용자가 입력한 데이터를 받아 DB에 저장
 
 
-
 ### edit 기능 구현 (52p)
+```
+# articles/urls.py
+
+urlpatterns = [
+    ...,
+    path('<int:pk>/edit/', views.edit, name='edit'),
+]
+```
+```
+# articles/views.py
+
+def edit(request, pk):
+    article = Article.objects.get(pk=pk)
+    context = {
+        'article': article,
+    }
+    return render(request, 'articles/edit.html', context)
+```
+
+- 수정 시 이전 데이터가 출력될 수 있도록 작성
+    ```
+    <!-- articles/edit.html -->
+
+    <h1>Edit</h1>
+    <form action="{% url "articles:update" article.pk %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <label for="title">제목 : </label>
+        <input type="text" id="title" name="title" value="{{ article.title }}">
+    </div>
+    <div>
+        <label for="content">내용 : </label>
+        <textarea name="content" id="content" cols="30" rows="10">{{ article.content }}</textarea>
+    </div>
+    <input type="submit">
+    </form>
+    <hr>
+    <a href="{% url 'articles:index' %}">[back]</a>
+    ```
+    ![edit](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-31.png)
+
+- edit 페이지로 이동하기 위한 하이퍼링크 작성
+    ```
+    <!-- articles/detail.html -->
+
+    <a href="{% url "articles:edit" article.pk %}">EDIT</a>
+    ```
 
 ### update 기능 구현
+```
+# articles/urls.py
+
+urlpatterns = [
+    ...,
+    path('<int:pk>/update/', views.update, name='update'),
+]
+```
+```
+# articles/views.py
+
+def update(request, pk):
+    article = Article.objects.get(pk=pk)
+    article.title = request.POST.get('title')
+    article.content = request.POST.get('content')
+    article.save()
+    return redirect('articles:detail', article.pk)
+```
 
 ## 참고
 
 ### HTTP request methods를 활용한 효율적인 URL 구성
+**REST API**를 이용해 동일한 URL 이지만 method에 따라 서버에 요구하는 행동을 다르게 요구할 수 있음
+<br>
+
+|method|url|action|
+|:---:|---|---|
+|(GET)|articles/1/|1번 게시글 조회 요청|
+|(POST)|articles/1/|1번 게시글 조작 요청|
