@@ -282,6 +282,18 @@
   - HAVING clause 
     - 집계 항목에 대한 세부 조건을 지정
     - 주로  GROUP BY와 함께 사용되며 GROUP BY가 없다면 WHERE 처럼 동작
+    ```
+    SELECT
+    Composer,
+    AVG(Milliseconds / 60000) AS avgOfMinute
+    FROM
+    tracks
+    GROUP BY
+    Composer
+    HAVING
+    avgOfMinute < 10;
+
+    ```
   
 -  SELECT Statement 실행 순서
    -  FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY > LIMIT
