@@ -37,7 +37,9 @@ $ python manage.py makemigrations
 ![migrate1](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-48.png)
 - 기본적으로 모든 컬럼은 NOT NULL 제약조건이 있기 때문에 데이터가 없이는 새로운 필드가 추가되지 못함 -> 기본값 설정 필요
 - 1을 입력하고 Enter 진행<br>
+
 ![migrate2](https://github.com/yamuzin-oksusu/SSAFY_FW2023/blob/master/images/image-49.png)
+
 - 추가되는 외래키 user_id에 어떤 데이터를 넣을 것인지 직접 입력해야 함
 - 마찬가지로 1 입력하고 Enter 진행
 - 그러면 기존에 작성된 게시글이 있다면 모두 1번 회원이 작성한 것으로 처리됨
