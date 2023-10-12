@@ -112,7 +112,7 @@
 ### 대체하기
 
 - AbstractUser를 상속받는 커스텀 User 클래스 작성
-  - 기존 User 클래스도 AbstrackUser를 상속받기 때문에 **커스텀 User 클래스도 기존 User 클래스와 완전히 같은 모습을 가지게 됨**
+  - 기존 User 클래스도 AbstractUser를 상속받기 때문에 **커스텀 User 클래스도 기존 User 클래스와 완전히 같은 모습을 가지게 됨**
 
     ```
     # accounts/models.py
