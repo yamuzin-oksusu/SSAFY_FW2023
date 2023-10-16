@@ -1,6 +1,6 @@
 # Many to one relationships 2
 
-2023.10.11 (Thu)
+2023.10.12 (Thu)
 -----
 ## 개요
 **Article(N) - User(1)**
