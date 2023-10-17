@@ -114,7 +114,7 @@
     # Reservation Class 주석 처리
     ```
 - 데이터베이스 초기화 후 Migration 진행 및 shell_plus 실행
-  - 생성된 중개 테이블 hospitals_patient_doctors 확인
+  - 생성된 중개 테이블 hospitals_patient_doctors 확인<br>
     ![ManyToManyField](./images/image-57.png)
 - 의사 1명과 환자 2명 생성
     ```
@@ -235,7 +235,7 @@
     ## <QuerySet [<Doctor : 1번 의사 minjoo>]> 
     ```
 
-- 생성된 예약 확인
+- 생성된 예약 확인<br>
     ![reserve confirm](./images/image-59.png)
 
 - 의사와 환자가 각각 예약 삭제
@@ -312,7 +312,7 @@
         created_at = models.DateTimeField(auto_now_add=True)
         updated_at = models.DateTimeField(auto_now=True)
     ```
-- Migration 진행 후 에러 발생
+- Migration 진행 후 에러 발생<br>
     ![Migration error](./images/image-60.png)
   - user.article_set 역참조 매니저 충돌
     - N:1 (유저가 작성한 게시글) vs M:N (유저가 좋아요 한 게시글)
@@ -330,7 +330,7 @@
         like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_articles')
         ...
     ```
-- 생성된 중개 테이블 확인
+- 생성된 중개 테이블 확인<br>
     ![table](./images/image-61.png)
 
 - User - Article 간 사용 가능한 전체 related manager
@@ -387,6 +387,6 @@
     <hr>
     {% endfor %}
     ```
-- 좋아요 버튼 출력 확인
+- 좋아요 버튼 출력 확인<br>
     ![likes](./images/image-62.png)
 
