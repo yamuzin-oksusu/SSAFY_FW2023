@@ -25,9 +25,22 @@
 이벤트가 발생했을 때 실행되는 함수
 > 사용자의 행동에 어떻게 반응할지를 JavaScript 코드로 표현한 것
 - `.addEventListener()`
-  - 특정 이벤트를 DOM 요고사 수신할 때마다 콜백 함수를 호출
+  - 특정 이벤트를 DOM 요고사 수신할 때마다 콜백 함수를 호출<br>
+  ![eventlistener](./images/image-90.png)
+  - type 
+    - 수신할 이벤트 이름
+    - 문자열로 작성 (ex.'click')
+  - handler
+    - 발생한 이벤트 객체를 수신하는 콜백 함수
+    - 콜백 함수는 발생한 Event object를 유일한 매개변수로 받음
+
+- addEventListener 활용 : "버튼을 클릭하면 버튼 요소 출력하기"
+  - 요소에 addEventListener를 부착하게 되면 내부의 this 값은 대상 요소를 가리키게 됨 (event 객체의 currentTarget 속성 값과 동일)
+```
+
+``` 
   
-ㅇㅇ
+
 ### 버블링
 
 ## event handler 활용
