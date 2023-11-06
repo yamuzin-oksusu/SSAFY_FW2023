@@ -192,7 +192,7 @@ const dynamicId = ref('my-id')
         setup() {
           const isActive = ref(true)
           const hasInfo = ref(true)
-          // ref는 반응 객체의 
+          // ref는 반응 객체의 속성으로 엑세스되거나 변경될 때 자동으로 unwrap
           const classObj = ref({
             active: isActive, 
             'text-primary': hasInfo
@@ -493,7 +493,7 @@ const dynamicId = ref('my-id')
         <option>Cathy</option>
       </select>
       ```
-    ![select](./images/image-96.png)
+    ![select](./images/image-96.png)<br>
 **[v-model 종합](https://vuejs.org/api/built-in-directives.html#v-model)**
 
 
